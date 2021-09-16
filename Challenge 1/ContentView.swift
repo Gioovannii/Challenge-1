@@ -16,6 +16,16 @@ struct ContentView: View {
     @State private var selectedValueTarget = 1
 
     let convertedValues = ["Celcius", "Fahrenheit", "Kelvin"]
+    
+    var getTemperature: Double {
+        let userInput = Double(userInput) ?? 0
+        let selectValue = convertedValues[selectedValue]
+        let selectedValueTarget = convertedValues[selectedValueTarget]
+        
+        
+        return 0
+    }
+    
     var body: some View {
         Form {
             Section {
@@ -42,7 +52,7 @@ struct ContentView: View {
             }
             
             Section {
-                Text("Your conversion is \(resultOutput)")
+                Text("Your conversion is \(getTemperature, specifier: "%.2f") \(convertedValues[selectedValueTarget])")
             }
         }
         
