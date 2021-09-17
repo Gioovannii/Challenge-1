@@ -61,7 +61,7 @@ struct ContentView: View {
             }
             
             Section {
-                Text("Your conversion is \(getTemperature, specifier: "%.2f") \(convertedValues[selectedValueTarget])")
+                Text("Votre resultat est  \(getTemperature, specifier: "%.2f") \(convertedValues[selectedValueTarget])")
             }
         }
         
