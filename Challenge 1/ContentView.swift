@@ -38,8 +38,8 @@ struct ContentView: View {
     var body: some View {
         Form {
             Section {
-                TextField("Hello, world!", text: $userInput)
-                Text("User input : \(userInput)")
+                TextField("Tappe le montant de degrée", text: $userInput)
+                Text("Utilisateur valeur : \(userInput)")
             }
             
             Section {
