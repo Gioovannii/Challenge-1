@@ -21,7 +21,16 @@ struct ContentView: View {
         let userInput = Double(userInput) ?? 0
         let selectValue = convertedValues[selectedValue]
         let selectedValueTarget = convertedValues[selectedValueTarget]
-        
+        switch selectedValueTarget {
+        case "Celcius":
+            print(" ")
+        case "Fahrenheit":
+            print(" ")
+        case "Kelvin":
+            print(" ")
+        default:
+            fatalError()
+        }
         
         return 0
     }
