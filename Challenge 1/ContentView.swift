@@ -14,25 +14,35 @@ struct ContentView: View {
     
     @State private var selectedValue = 1
     @State private var selectedValueTarget = 1
-
+    
     let convertedValues = ["Celcius", "Fahrenheit", "Kelvin"]
     
-    var getTemperature: Double {
-        let userInput = Double(userInput) ?? 0
-        let selectValue = convertedValues[selectedValue]
-        let selectedValueTarget = convertedValues[selectedValueTarget]
-        switch selectedValueTarget {
-        case "Celcius":
-            print(" ")
-        case "Fahrenheit":
-            print(" ")
-        case "Kelvin":
-            print(" ")
-        default:
-            fatalError()
-        }
+    
+    var conversion: Double {
+        let unitToConvert = Double(userInput) ?? 0
         
-        return 0
+        switch (selectedValue, selectedValueTarget) {
+        case (0,1):
+            // c -> f
+            return unitToConvert * 1.8 + 32
+        case (0,2):
+            // c -> k
+            return unitToConvert + 273.15
+        case (1,0):
+            // f -> c
+            return (unitToConvert - 32) * 1.8
+        case (1,2):
+            // f -> k
+            return (unitToConvert - 32) * 1.8 + 273.15
+        case (2,0):
+            // k -> c
+            return unitToConvert - 273.15
+        case (2,1):
+            // k -> f
+            return (unitToConvert - 273.15) * 1.8 + 32
+        default:
+            return unitToConvert
+        }
     }
     
     var body: some View {
