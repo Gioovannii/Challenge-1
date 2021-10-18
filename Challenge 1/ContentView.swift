@@ -71,15 +71,15 @@ struct ContentView: View {
             }
             
             Section {
-                Text("Votre resultat est  \(getTemperature, specifier: "%.2f") \(convertedValues[selectedValueTarget])")
+                Text("Votre resultat est  \(conversion, specifier: "%g") \(convertedValues[selectedValueTarget])")
             }
         }
-        
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
-}
